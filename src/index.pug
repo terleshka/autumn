@@ -58,6 +58,32 @@ html(lang="en")
             .about__right
               h4.about__prolog Привет, меня зовут
               h2.about__title Виктория Терлецкая
-              .about__text Я занимаюсь разработкой современных сайтов. Мне нравится делать интересные и современные проекты.
-              .about__ps Этот сайт был сделан в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент, а пока посмотрите как тут красиво и круто!
-
+              p.about__text Я занимаюсь разработкой современных сайтов. Мне нравится делать интересные и современные проекты.
+              p.about__ps Этот сайт был сделан в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент, а пока посмотрите как тут красиво и круто!
+        section.skills
+          .container.skills__container
+            .skills__picture
+              +image('content/background/hands.png', 'skills__img')
+            .skills__block
+              .skills__title 
+                h2.section-title Чем я могу быть полезен вам
+                .skills__desc
+                  p Этот сайт был сделан в рамках обучения в школе онлайн образования LoftSchool. Чуть позже я освежу в нем свой контент, а пока посмотрите как тут красиво и круто!
+              ul.user-skills
+                -
+                  var skills = [
+                    ['Front-end', ['HTML5', 'CSS', 'JavaScript', 'Jquery и Vue.js']],
+                    ['Workflow', ['Git', 'Terminal', 'Gulp', 'Webpack']],
+                  ]
+                each item in skills
+                  li.user-skills__item.skills-row
+                    h3.skills-row__title #{item[0]}
+                    ul.skills-row__list
+                      each skill in item[1]
+                        li.skills-row__item
+                          .skill
+                            svg(viewBox="0 0 200 200" preserveAspectRatio="none").skill__shape
+                              circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--under
+                              circle(r="80" cx="100" cy="100").skill__circle.skill__circle--position--above
+                              linear-gradient()
+                          .skill__title #{skill}
