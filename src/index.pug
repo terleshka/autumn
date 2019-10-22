@@ -88,31 +88,46 @@ html(lang="en")
                               text(x="30%" y="50%" style ).skill__title #{skill}
         section.works
           .container.container__works
-            h2.section-title Мои Работы
-            .works__left
-              .slider
-                img().slider__fullpic
-                .slider__preview
-                  .ul.previews__list
-                    - for (var i=0; i<3; i++)
-                    li.previews__item
-                      img().previews__pic
-                .slider__buttons
-                    button.slider__btn.slider__btn--prev
-                    button.slider__btn.slider__btn--next
-            .works__right
-              .works__tags
-                - var tags = ['html', 'css', 'javascript']
-                each tag in tags
-                  ul.tags__list
-                    li.tags__item #{tag}
-              .works__text
-                h3.works__title Сайт школы образования
+            h2.section-title.section-title--works Мои Работы
+            .works__content
+              .works__left
+                .slider
+                  +image('content/slider/slide1_big.jpg', 'slider__fullpic')
+                  .slider__preview
+                    ul.previews__list
+                      - for (var i=0; i<3; i++)
+                        li.previews__item
+                          img().previews__pic
+                  .slider__buttons
+                      button.slider__btn.slider__btn--prev
+                      button.slider__btn.slider__btn--next
+
+              .works__right
+                .works__tags
+                  - var tags = ['html', 'css', 'javascript']
+                    ul.tags__list
+                      each tag in tags
+                        li.tags__item #{tag}
+                .works__text
+                  h3.works__title Сайт школы образования
                   .works__desc
                     p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
-              a.icon-link
-                //+icon('link.svg','icon-link__icon')
-                .icon-link__text Посмотреть сайт
+                  a.icon-link
+                    +icon('link', 'icon-link__svg')
+                    .icon-link__text Посмотреть сайт
+
+        .background__autmn
+          .background__autmn__picture
+            +image('content/design/leafs.png', 'background__autmn__img')
+
+
+        section.talk-about-me
+          .container.container__talk-about-me
+
+
+          
+
+        
 
 
 
