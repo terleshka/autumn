@@ -115,17 +115,99 @@ html(lang="en")
                   a.icon-link
                     +icon('link', 'icon-link__svg')
                     .icon-link__text Посмотреть сайт
+        section.feedback-contact
+          .feedback-contact__picture
+            +image('content/design/leafs.png', 'feedback-contact__img')
+          .container.container__feedback-contact
+            .feedback__slider
+              .feedback__title-nav
+                h2.feedback-title Что обо мне говорят   
+                .feedback__nav
+                  .feedback__btn-left
+                  .feedback__btn-right  
+              ul.feedback__slide
 
-        .background__autmn
-          .background__autmn__picture
-            +image('content/design/leafs.png', 'background__autmn__img')
+                li.feedback__slide-first
+                  .feedback__slide-text
+                    p Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                  .feedback__slide-person
+                    .feedback__slide-pic
+                      +image('content/userfiles/dima.png', 'feedback__slide-img')
+                    .feedback__slide-who
+                      .feedback__slide-name Ковальчук Дмитрий
+                      .feedback__slide-position Основатель LoftSchool 
+
+                li.feedback__slide-second
+                  .feedback__slide-text
+                    p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                  .feedback__slide-person
+                    .feedback__slide-pic
+                      +image('content/userfiles/vova.png', 'feedback__slide-img')
+                    .feedback__slide-who
+                      .feedback__slide-name Владимир Сабанцев
+                      .feedback__slide-position Преподаватель 
+            .contacts__form
+              h2.contacts__form-title Связаться со мной
+              form(action="" method="method").form
+                .form__row
+                  .form__label-input
+                    label.form__label
+                      .form__label-title Введите ваше имя
+                      input(type="text").form__input
+                      .form__input-custom
+                  .form__label-input
+                    label.form__label
+                      .form__label-title Введите ваш email
+                      input(type="text").form__input
+                      .form__input-custom
+                .form__row
+                  .form__label-input
+                    label.form__label
+                      .form__label-title Сообщение к письму
+                      textarea(name="", cols="30", rows="10").form__textarea
+                      .form__input-custom.form__textarea-custom
+                .form__button
+                  button.form__btn Отправить    
+        footer.footer
+          .container.footer__container
+            .footer__copyright
+              .footer__copy C 2019
+              .footer__copy-name
+                h3.footer__name Виктория Терлецкая
+                h4.footer__syte Личный сайт веб-разработчика
+            .footer__block
+              .footer__menu
+                nav.nav
+                  - var menu = ['Главная', 'Обо мне', 'Навыки','Работы','Отзывы','Связаться']
+                  ul.nav__list
+                    each item in menu
+                      li.nav__item
+                        a(href="").nav__link #{item}
+              .footer__text
+                .footer__text-left
+                  .footer__loftschool
+                    p Этот сайт я сделала в рамках обучения в Школе онлайн образования loftschool 
+                  .footer__socials
+                    .footer__links
+                      - var icons = ['insta','vk','github']
+                      ul.socials  
+                        each item in icons
+                          li.socials__item
+                            a(href="").socials__link  
+                              +icon(`${item}`, 'socials__icon')  
+                .footer__text-right
+                  .footer__quote 
+                    p Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который щнает где вы живете
+                  .footer__author Martin Golding
+
+                    
 
 
-        section.talk-about-me
-          .container.container__talk-about-me
+
+            
 
 
-          
+
 
         
 
